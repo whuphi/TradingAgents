@@ -50,6 +50,12 @@ print(f"[cache] {path} rows={len(raw)} last={raw['date'].iloc[-1]} close={raw['c
 
 # --- run the graph ---
 config = deepcopy(DEFAULT_CONFIG)
+# The sandbox shell does not inherit IDE-side env config, so the provider and
+# models are pinned here; only DEEPSEEK_API_KEY has to be supplied at call time.
+if not os.getenv("TRADINGAGENTS_LLM_PROVIDER"):
+    config["llm_provider"] = "deepseek"
+    config["deep_think_llm"] = "deepseek-v4-pro"
+    config["quick_think_llm"] = "deepseek-flash"
 config["data_vendors"] = {
     "core_stock_apis": "yfinance",
     "technical_indicators": "yfinance",
