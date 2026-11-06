@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>000892.SZ 2026-11-05 Underweight: TradingAgents report</title>
+<style>
+:root {
+  --paper: #fbfbfa; --ink: #1c2126; --muted: #5d6670; --rule: #e2e5e8; --wash: #f2f4f5;
+  --accent: #087a59; --up: #087a59; --down: #b4372f; --level: #5d6670; --edge: #d3d8dc; --mark: #878f97;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a1f; --ink: #e4e8eb; --muted: #9aa6af; --rule: #263239; --wash: #1a242a;
+    --accent: #14c290; --up: #14c290; --down: #ef6f63; --level: #9aa6af; --edge: #3d4c55; --mark: #66737c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .masthead .logo [stroke="#363636"] { stroke: var(--muted); }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.62 var(--serif); font-kerning: normal;
+}
+.page { max-width: 46rem; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; }
+main h2, main h3 { scroll-margin-top: 1rem; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+h1, h2, h3, h4 { text-wrap: balance; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.masthead { padding-bottom: 1.75rem; border-bottom: 1px solid var(--rule); }
+/* The logo leads at the top left, where readers look for it, 24px tall (the usual
+   on-screen floor for a wordmark) with at least its height clear below. */
+.masthead .logo { display: block; width: fit-content; margin: 0 0 2.25rem; }
+.masthead .logo svg { display: block; height: 1.5rem; width: auto; }
+.masthead h1 {
+  margin: 0; font: 600 2.6rem/1.1 var(--sans); letter-spacing: -0.02em;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.5em;
+}
+.masthead .rating { font-weight: 500; }
+.rating.up { color: var(--up); } .rating.down { color: var(--down); } .rating.level { color: var(--level); }
+.rating.review { color: var(--muted); font-style: italic; }
+.masthead .date { margin: 0.55rem 0 1.5rem; font: 1rem/1.4 var(--sans); color: var(--muted); }
+.run { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.45rem 1.25rem;
+  font: 0.85rem/1.5 var(--sans); }
+.run > div { display: contents; }
+.run dt { color: var(--muted); }
+.run dd { margin: 0; overflow-wrap: anywhere; }
+.run .note dd { color: var(--down); }
+.field { display: inline-block; margin: 0 0.15rem 0.15rem 0; padding: 0 0.4rem; border: 1px solid var(--edge);
+  border-radius: 4px; background: var(--wash); font: 0.8rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.run .group { display: inline-block; margin-right: 0.9rem; white-space: nowrap; }
+.run .group > .name { color: var(--muted); margin-right: 0.3rem; }
+.run .then { color: var(--muted); margin: 0 0.2rem; }
+
+/* The sections: listed under the header on narrow screens. On wide ones, a
+   quiet rail centred on the left edge (numerals for the sections, short bars
+   for their agents) that opens into the full list when pointed at or focused. */
+.contents { margin: 2.25rem 0 0; font: 0.9rem/1.45 var(--sans); }
+.contents ul { margin: 0; padding: 0; list-style: none; }
+.contents > ul > li { margin: 0 0 0.75rem; }
+.contents ul ul { margin-top: 0.2rem; padding-left: 1.6rem; font-size: 0.85rem; }
+.contents ul ul li { margin: 0.1rem 0; }
+.contents a { display: flex; align-items: center; gap: 0.6rem; color: var(--muted); text-decoration: none; }
+.contents > ul > li > a { color: var(--ink); }
+.contents .num { min-width: 1.6rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.contents .bar { display: none; }
+.contents a:hover .label, .contents a:focus-visible .label { color: var(--accent); text-decoration: underline; }
+.to-top { position: fixed; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom));
+  padding: 0.25rem 0.6rem; border: 1px solid var(--edge); border-radius: 4px; background: var(--paper);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); text-decoration: none; }
+
+@media (min-width: 60rem) {
+  .contents { position: fixed; left: 1rem; top: 50%; transform: translateY(-50%); z-index: 1;
+    max-height: 86vh; overflow-y: auto; overscroll-behavior: contain; margin: 0;
+    padding: 0.7rem 0.9rem; border: 1px solid transparent; border-radius: 6px;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s; }
+  .contents > ul > li { margin: 0 0 0.35rem; }
+  .contents ul ul { margin-top: 0; padding-left: 0; }
+  .contents ul ul li { margin: 0; }
+  /* Marks reach 3:1 contrast and rows 24px, the WCAG 2.2 floors for a control's
+     visual cue and its pointer target. */
+  .contents a { min-height: 1.5rem; }
+  .contents .num { min-width: 1.4rem; }
+  .contents .bar { display: block; flex: none; width: 1.25rem; height: 2px; margin-left: 0.2rem;
+    border-radius: 1px; background: var(--mark); }
+  .contents .label { max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+    transition: opacity 0.15s, max-width 0.2s; }
+  .contents:hover, .contents:focus-within { background: var(--paper); border-color: var(--rule);
+    box-shadow: 0 6px 24px rgb(0 0 0 / 0.08); }
+  .contents:hover .label, .contents:focus-within .label { max-width: 18rem; opacity: 1; }
+  .contents a:hover .bar, .contents a:focus-visible .bar { background: var(--accent); }
+  .to-top { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contents, .contents .label { transition: none; }
+}
+
+/* The maker's credit: one quiet line at the foot. */
+.credit { margin-top: 4.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+  color: var(--muted); font: 0.8rem/1.4 var(--sans); }
+.credit a { color: inherit; text-decoration: none; }
+.credit a.brand { color: var(--accent); }
+.credit a:hover, .credit a:focus-visible { text-decoration: underline; }
+
+/* Three levels of separation: the five groups, the agents within a group, and
+   breaks an agent draws inside its own text. */
+main h2 {
+  margin: 4.5rem 0 0.25rem; padding-top: 1.5rem; border-top: 2px solid var(--ink);
+  font: 600 1.45rem/1.3 var(--sans); letter-spacing: -0.01em;
+}
+main section:first-child h2 { margin-top: 3rem; }
+main h3 { margin: 2.75rem 0 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  font: 600 1.15rem/1.35 var(--sans); color: var(--accent); }
+main h2 + h3 { margin-top: 1.25rem; padding-top: 0; border-top: 0; }
+main h4, main h5, main h6 { margin: 1.75rem 0 0.5rem; font: 600 1rem/1.4 var(--sans); }
+main h5, main h6 { color: var(--muted); }
+main p, main ul, main ol { margin: 0 0 1rem; }
+main li { margin: 0.25rem 0; }
+main strong { font-weight: 650; }
+main blockquote { margin: 1.25rem 0; padding: 0.1rem 0 0.1rem 1rem; border-left: 3px solid var(--rule);
+  color: var(--muted); }
+main code { font: 0.88em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--wash); padding: 0.1em 0.3em; border-radius: 3px; }
+main pre { background: var(--wash); padding: 0.9rem 1rem; border-radius: 4px; overflow-x: auto; }
+main pre code { background: none; padding: 0; }
+main hr { width: 3rem; margin: 2rem auto; border: 0; border-top: 1px solid var(--rule); }
+
+.table { overflow-x: auto; margin: 0 0 1.25rem; }
+table { border-collapse: collapse; width: 100%; font: 0.86rem/1.45 var(--sans);
+  font-variant-numeric: tabular-nums; }
+th, td { padding: 0.45rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; border-bottom-color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 34rem) {
+  body { font-size: 16px; }
+  .page { padding: 2rem 1rem 3rem; }
+  .masthead h1 { font-size: 2rem; }
+  .masthead .logo svg { height: 1.25rem; }
+  .run { grid-template-columns: 1fr; gap: 0 0; }
+  .run dd { margin-bottom: 0.45rem; }
+  .run .group { white-space: normal; }
+}
+@media print {
+  :root { --paper: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; --wash: #f2f2f2;
+    --edge: #bbb; --up: #087a59; --down: #b4372f; --level: #444; }
+  body { font-size: 11pt; }
+  .table { overflow: visible; }
+  .page { max-width: none; padding: 0; }
+  .contents, .to-top { display: none; }
+  main h2 { break-before: page; border-top: 0; margin-top: 0; }
+  main section:first-child h2 { break-before: auto; }
+  main h3, main h4 { break-after: avoid; }
+  a { color: inherit; text-decoration: none; }
+  table { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="masthead">
+<a class="logo" href="https://tauric.ai" rel="noopener" aria-label="Tauric Research"><svg width="993" height="115" viewBox="0 0 993 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M189.86 95.0459V37.9779H165.924V29.9259H223.74V37.9779H199.804V95.0459H189.86ZM251.026 46.4259C256.071 46.4259 260.178 47.0272 263.345 48.2299C266.514 49.4032 268.89 51.3686 270.474 54.1259C272.058 56.8832 272.85 60.6379 272.85 65.3899V95.0459H264.666L263.961 89.8979H263.434C261.644 91.7752 259.386 93.2419 256.657 94.2979C253.929 95.3246 251.025 95.8379 247.946 95.8379C244.426 95.8379 241.419 95.2952 238.925 94.2099C236.432 93.0952 234.54 91.5406 233.249 89.5459C231.959 87.5512 231.313 85.2046 231.313 82.5059C231.313 78.2526 232.897 74.9672 236.065 72.6499C239.263 70.3032 244.337 68.8219 251.29 68.2059L263.258 67.0179V64.7299C263.258 61.9139 262.774 59.7139 261.806 58.1299C260.838 56.5459 259.371 55.4312 257.406 54.7859C255.47 54.1406 252.888 53.8179 249.662 53.8179C247.432 53.8179 245.012 54.0086 242.401 54.3899C239.82 54.7712 237.341 55.3432 234.965 56.1059V48.8019C237.312 48.0392 239.908 47.4526 242.754 47.0419C245.628 46.6312 248.386 46.4259 251.026 46.4259ZM250.541 89.0619C252.888 89.0619 255.162 88.6512 257.362 87.8299C259.562 86.9792 261.527 85.7179 263.258 84.0459V72.8259L252.038 73.9259C248.136 74.3659 245.35 75.2166 243.678 76.4779C242.005 77.7099 241.169 79.4699 241.169 81.7579C241.169 84.0752 241.947 85.8792 243.501 87.1699C245.056 88.4312 247.403 89.0619 250.541 89.0619ZM313.339 95.8379C307.59 95.8379 303.087 94.2979 299.831 91.2179C296.575 88.1086 294.947 83.2686 294.947 76.6979V47.1739H304.715V76.1699C304.715 80.1886 305.624 83.0779 307.443 84.8379C309.291 86.5979 311.916 87.4779 315.319 87.4779C317.871 87.4779 320.379 86.9939 322.843 86.0259C325.336 85.0286 327.492 83.5766 329.311 81.6699V47.1739H339.079V95.0459H330.983L330.367 89.9419H329.883C327.624 91.8486 325.072 93.3152 322.227 94.3419C319.382 95.3392 316.419 95.8379 313.339 95.8379ZM362.371 47.1739H370.423L371.171 53.2899H371.743C373.474 51.2072 375.703 49.5792 378.431 48.4059C381.188 47.2326 384.063 46.6459 387.055 46.6459C388.756 46.6459 390.355 46.7926 391.851 47.0859V55.8419C390.414 55.5779 388.654 55.4459 386.571 55.4459C383.99 55.4459 381.364 55.9446 378.695 56.9419C376.026 57.9392 373.84 59.4206 372.139 61.3859V95.0459H362.371V47.1739ZM409.069 95.0459V47.1739H418.837V95.0459H409.069ZM413.953 37.8459C411.871 37.8459 410.287 37.3912 409.201 36.4819C408.145 35.5726 407.617 34.2672 407.617 32.5659C407.617 30.8352 408.145 29.5152 409.201 28.6059C410.287 27.6672 411.871 27.1979 413.953 27.1979C416.036 27.1979 417.605 27.6672 418.661 28.6059C419.747 29.5152 420.289 30.8352 420.289 32.5659C420.289 34.2672 419.747 35.5726 418.661 36.4819C417.605 37.3912 416.036 37.8459 413.953 37.8459ZM464.85 95.9259C456.607 95.9259 450.315 93.8432 445.974 89.6779C441.662 85.5126 439.506 79.3526 439.506 71.1979C439.506 63.0139 441.779 56.8392 446.326 52.6739C450.902 48.5086 457.575 46.4259 466.346 46.4259C470.716 46.4259 474.735 46.9246 478.402 47.9219V55.7099C476.378 55.2406 474.486 54.8886 472.726 54.6539C470.966 54.4192 469.118 54.3019 467.182 54.3019C461.168 54.3019 456.71 55.6512 453.806 58.3499C450.931 61.0486 449.494 65.2872 449.494 71.0659C449.494 76.8739 450.858 81.1566 453.586 83.9139C456.343 86.6712 460.42 88.0499 465.818 88.0499C467.695 88.0499 469.616 87.8886 471.582 87.5659C473.547 87.2139 475.82 86.6712 478.402 85.9379V93.7259C474.236 95.1926 469.719 95.9259 464.85 95.9259ZM574.428 95.0459L553.704 69.0859C553.176 69.1152 552.37 69.1299 551.284 69.1299C548.38 69.1299 544.978 68.9832 541.076 68.6899V95.0459H531.308V31.4659C537.967 29.9699 544.846 29.2219 551.944 29.2219C561.595 29.2219 568.752 30.8059 573.416 33.9739C578.08 37.1126 580.412 42.1286 580.412 49.0219C580.412 54.0086 579.004 58.0859 576.188 61.2539C573.402 64.4219 569.266 66.6366 563.78 67.8979L585.648 95.0459H574.428ZM541.076 61.2099C543.071 61.4152 544.816 61.5619 546.312 61.6499C547.838 61.7379 549.627 61.7819 551.68 61.7819C558.427 61.7819 563.34 60.7699 566.42 58.7459C569.5 56.6926 571.04 53.4952 571.04 49.1539C571.04 46.0739 570.395 43.6099 569.104 41.7619C567.843 39.9139 565.863 38.5792 563.164 37.7579C560.495 36.9366 556.975 36.5259 552.604 36.5259C550.404 36.5259 548.424 36.6139 546.664 36.7899C544.904 36.9659 543.042 37.2299 541.076 37.5819V61.2099ZM642.947 74.0139H608.231C608.407 77.4752 609.155 80.2766 610.475 82.4179C611.795 84.5299 613.775 86.0846 616.415 87.0819C619.055 88.0792 622.443 88.5779 626.579 88.5779C630.686 88.5779 635.233 87.9472 640.219 86.6859V93.9459C635.027 95.2659 630.026 95.9259 625.215 95.9259C616.298 95.9259 609.61 93.9166 605.151 89.8979C600.722 85.8499 598.507 79.6166 598.507 71.1979C598.507 65.9179 599.402 61.4299 601.191 57.7339C602.981 54.0379 605.562 51.2366 608.935 49.3299C612.338 47.3939 616.43 46.4259 621.211 46.4259C628.251 46.4259 633.634 48.5819 637.359 52.8939C641.085 57.1766 642.947 63.3659 642.947 71.4619V74.0139ZM621.079 52.8939C616.973 52.8939 613.834 54.1406 611.663 56.6339C609.493 59.0979 608.334 62.9259 608.187 68.1179H633.751C633.634 62.9259 632.519 59.0979 630.407 56.6339C628.295 54.1406 625.186 52.8939 621.079 52.8939ZM677.365 95.9259C671.352 95.9259 665.896 95.2219 660.997 93.8139V86.7299C666.248 88.1966 671.718 88.9299 677.409 88.9299C681.809 88.9299 684.977 88.3432 686.913 87.1699C688.849 85.9672 689.817 84.2219 689.817 81.9339C689.817 80.7019 689.597 79.6899 689.157 78.8979C688.717 78.0766 687.969 77.4019 686.913 76.8739C685.857 76.3166 684.405 75.8912 682.557 75.5979L674.065 74.2779C669.137 73.4859 665.573 71.9899 663.373 69.7899C661.202 67.5899 660.117 64.6419 660.117 60.9459C660.117 56.4579 661.965 52.9232 665.661 50.3419C669.386 47.7312 675.062 46.4259 682.689 46.4259C685.094 46.4259 687.485 46.5872 689.861 46.9099C692.266 47.2032 694.481 47.6432 696.505 48.2299V55.2699C692.046 54.0379 687.456 53.4219 682.733 53.4219C677.893 53.4219 674.476 54.0526 672.481 55.3139C670.486 56.5752 669.489 58.3206 669.489 60.5499C669.489 62.2219 670.002 63.5859 671.029 64.6419C672.056 65.6686 673.889 66.4166 676.529 66.8859L685.021 68.2059C689.92 68.9686 693.513 70.3766 695.801 72.4299C698.089 74.4832 699.233 77.4606 699.233 81.3619C699.233 84.3832 698.412 86.9792 696.769 89.1499C695.156 91.3206 692.706 92.9926 689.421 94.1659C686.165 95.3392 682.146 95.9259 677.365 95.9259ZM760.579 74.0139H725.863C726.039 77.4752 726.787 80.2766 728.107 82.4179C729.427 84.5299 731.407 86.0846 734.047 87.0819C736.687 88.0792 740.075 88.5779 744.211 88.5779C748.317 88.5779 752.864 87.9472 757.851 86.6859V93.9459C752.659 95.2659 747.657 95.9259 742.847 95.9259C733.929 95.9259 727.241 93.9166 722.783 89.8979C718.353 85.8499 716.139 79.6166 716.139 71.1979C716.139 65.9179 717.033 61.4299 718.823 57.7339C720.612 54.0379 723.193 51.2366 726.567 49.3299C729.969 47.3939 734.061 46.4259 738.843 46.4259C745.883 46.4259 751.265 48.5819 754.991 52.8939C758.716 57.1766 760.579 63.3659 760.579 71.4619V74.0139ZM738.711 52.8939C734.604 52.8939 731.465 54.1406 729.295 56.6339C727.124 59.0979 725.965 62.9259 725.819 68.1179H751.383C751.265 62.9259 750.151 59.0979 748.039 56.6339C745.927 54.1406 742.817 52.8939 738.711 52.8939ZM796.986 46.4259C802.032 46.4259 806.138 47.0272 809.306 48.2299C812.474 49.4032 814.85 51.3686 816.434 54.1259C818.018 56.8832 818.81 60.6379 818.81 65.3899V95.0459H810.626L809.922 89.8979H809.394C807.605 91.7752 805.346 93.2419 802.618 94.2979C799.89 95.3246 796.986 95.8379 793.906 95.8379C790.386 95.8379 787.38 95.2952 784.886 94.2099C782.393 93.0952 780.501 91.5406 779.21 89.5459C777.92 87.5512 777.274 85.2046 777.274 82.5059C777.274 78.2526 778.858 74.9672 782.026 72.6499C785.224 70.3032 790.298 68.8219 797.25 68.2059L809.218 67.0179V64.7299C809.218 61.9139 808.734 59.7139 807.766 58.1299C806.798 56.5459 805.332 55.4312 803.366 54.7859C801.43 54.1406 798.849 53.8179 795.622 53.8179C793.393 53.8179 790.973 54.0086 788.362 54.3899C785.781 54.7712 783.302 55.3432 780.926 56.1059V48.8019C783.273 48.0392 785.869 47.4526 788.714 47.0419C791.589 46.6312 794.346 46.4259 796.986 46.4259ZM796.502 89.0619C798.849 89.0619 801.122 88.6512 803.322 87.8299C805.522 86.9792 807.488 85.7179 809.218 84.0459V72.8259L797.998 73.9259C794.097 74.3659 791.31 75.2166 789.638 76.4779C787.966 77.7099 787.13 79.4699 787.13 81.7579C787.13 84.0752 787.908 85.8792 789.462 87.1699C791.017 88.4312 793.364 89.0619 796.502 89.0619ZM841.524 47.1739H849.576L850.324 53.2899H850.896C852.627 51.2072 854.856 49.5792 857.584 48.4059C860.341 47.2326 863.216 46.6459 866.208 46.6459C867.909 46.6459 869.508 46.7926 871.004 47.0859V55.8419C869.567 55.5779 867.807 55.4459 865.724 55.4459C863.143 55.4459 860.517 55.9446 857.848 56.9419C855.179 57.9392 852.993 59.4206 851.292 61.3859V95.0459H841.524V47.1739ZM909.164 95.9259C900.921 95.9259 894.629 93.8432 890.288 89.6779C885.976 85.5126 883.82 79.3526 883.82 71.1979C883.82 63.0139 886.093 56.8392 890.64 52.6739C895.216 48.5086 901.889 46.4259 910.66 46.4259C915.03 46.4259 919.049 46.9246 922.716 47.9219V55.7099C920.692 55.2406 918.8 54.8886 917.04 54.6539C915.28 54.4192 913.432 54.3019 911.496 54.3019C905.482 54.3019 901.024 55.6512 898.12 58.3499C895.245 61.0486 893.808 65.2872 893.808 71.0659C893.808 76.8739 895.172 81.1566 897.9 83.9139C900.657 86.6712 904.734 88.0499 910.132 88.0499C912.009 88.0499 913.93 87.8886 915.896 87.5659C917.861 87.2139 920.134 86.6712 922.716 85.9379V93.7259C918.55 95.1926 914.033 95.9259 909.164 95.9259ZM941.796 23.9419H951.564V52.2779H952.048C954.248 50.3712 956.756 48.9192 959.572 47.9219C962.417 46.9246 965.395 46.4259 968.504 46.4259C974.019 46.4259 978.375 47.9952 981.572 51.1339C984.769 54.2432 986.368 59.0686 986.368 65.6099V95.0459H976.6V66.0939C976.6 62.0459 975.661 59.1566 973.784 57.4259C971.936 55.6952 969.237 54.8299 965.688 54.8299C963.048 54.8299 960.481 55.3286 957.988 56.3259C955.524 57.2939 953.383 58.7312 951.564 60.6379V95.0459H941.796V23.9419Z" fill="#14C290"/>
+<rect x="0.205322" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="14.679" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="86.6055" y="44.0371" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" y="29.1787" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="58.7158" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="87.1592" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="73.0205" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="29.3579" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="71.9265" y="87.3262" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="43.1211" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="57.2478" y="101.631" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="101.284" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+<rect x="15.0187" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="44.3771" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="59.0558" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="73.3605" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="87.6662" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="0.34" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="101.624" y="101.971" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="43.4611" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="57.5876" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="15.0187" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="29.6979" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.2668" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.9455" y="0.34" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="72.445" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="86.7506" y="15.213" width="10.0489" height="10.0489" rx="5.02447" stroke="#363636" stroke-width="0.68"/>
+<rect x="100.716" y="14.873" width="10.7289" height="10.7289" rx="5.36447" fill="#14C290"/>
+</svg></a>
+<h1><span class="ticker">000892.SZ</span> <span class="rating down">Underweight</span></h1>
+<p class="date">Analysis of 2026-11-05</p>
+<dl class="run"><div class="detail"><dt>Generated</dt><dd>2026-11-07 01:13</dd></div><div class="detail"><dt>Deep model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-v4-pro</span></dd></div><div class="detail"><dt>Quick model</dt><dd><span class="field">deepseek</span> <span class="field">deepseek-flash</span></dd></div><div class="detail"><dt>Analysts</dt><dd><span class="field">market</span></dd></div><div class="detail"><dt>Debate rounds</dt><dd><span class="group"><span class="name">research</span><span class="field">1</span></span> <span class="group"><span class="name">risk</span><span class="field">1</span></span></dd></div><div class="detail"><dt>Data vendors</dt><dd><span class="group"><span class="name">Prices</span><span class="field">yfinance</span></span> <span class="group"><span class="name">Indicators</span><span class="field">yfinance</span></span> <span class="group"><span class="name">News</span><span class="field">yfinance</span></span> <span class="group"><span class="name">Fundamentals</span><span class="field">yfinance</span></span></dd></div><div class="detail"><dt>Version</dt><dd>TradingAgents 0.7.1</dd></div></dl>
+</header>
+<nav class="contents" aria-label="Sections"><ul><li><a href="#s1"><span class="num">I</span> <span class="label">Analyst Team Reports</span></a><ul><li><a href="#s1-1"><span class="bar"></span> <span class="label">Market Analyst</span></a></li></ul></li><li><a href="#s2"><span class="num">II</span> <span class="label">Research Team Decision</span></a><ul><li><a href="#s2-1"><span class="bar"></span> <span class="label">Bull Researcher</span></a></li><li><a href="#s2-2"><span class="bar"></span> <span class="label">Bear Researcher</span></a></li><li><a href="#s2-3"><span class="bar"></span> <span class="label">Research Manager</span></a></li></ul></li><li><a href="#s3"><span class="num">III</span> <span class="label">Trading Team Plan</span></a><ul><li><a href="#s3-1"><span class="bar"></span> <span class="label">Trader</span></a></li></ul></li><li><a href="#s4"><span class="num">IV</span> <span class="label">Risk Management Team Decision</span></a><ul><li><a href="#s4-1"><span class="bar"></span> <span class="label">Aggressive Analyst</span></a></li><li><a href="#s4-2"><span class="bar"></span> <span class="label">Conservative Analyst</span></a></li><li><a href="#s4-3"><span class="bar"></span> <span class="label">Neutral Analyst</span></a></li></ul></li><li><a href="#s5"><span class="num">V</span> <span class="label">Portfolio Manager Decision</span></a><ul><li><a href="#s5-1"><span class="bar"></span> <span class="label">Portfolio Manager</span></a></li></ul></li></ul></nav>
+<main>
+<section id="s1"><h2>I. Analyst Team Reports</h2><h3 id="s1-1">Market Analyst</h3>
+<h4>000892.SZ 技术面深度分析报告（分析日：2026-11-05）</h4>
+<h5>一、结论摘要</h5>
+<p><strong>核心判断：短线动量已完成&quot;由弱转修复&quot;的第一阶段（MACD 金叉、收复 10EMA 与 50SMA、RSI 回升至 55.6），但中长期趋势仍未扭转（收盘 4.89 仍低于 200SMA 5.2081，且 200SMA 持续下行）。2026 年 9 月以来的&quot;高点下移 + 低点下移&quot;通道结构尚未被破坏，因此当前位置更接近&quot;下跌通道内的技术性反抽&quot;，而非趋势反转的确认点。</strong></p>
+<p>策略定性：<strong>持有（Hold）</strong>，已有仓位可持有并用 4.55 作为纪律线；空仓者不追高，等待&quot;收盘站上 4.94–5.00 且量能放大&quot;的确认信号再顺势介入，或以极小仓位试错并严格止损。</p>
+<hr />
+<h5>二、数据校准说明</h5>
+<ul>
+<li>价格与指标数据调用无冲突：<code>get_indicators</code> 输出的 50SMA（4.5952）、200SMA（5.20805）、10EMA（4.55537）、RSI（55.5972）、MACD（-0.025228）、MACD 柱（0.011351）、ATR（0.415462）、布林（中轨 4.6915 / 上轨 5.4661 / 下轨 3.9169）、VWMA（4.5164）与 <code>get_verified_market_snapshot</code> 完全一致，<strong>可视为可信读数</strong>。</li>
+<li>最新已验证 K 线（2026-11-05）：开 <strong>4.60</strong>、高 <strong>4.92</strong>、低 <strong>4.59</strong>、收 <strong>4.89</strong>、量 <strong>152,526,410</strong>。收盘位于当日振幅上沿（收在最高价 4.92 附近），为四连阳中实体最强的一天。</li>
+</ul>
+<hr />
+<h5>三、多周期趋势结构</h5>
+<h6>1. 长期（月线级别）：仍在下行趋势中</h6>
+<ul>
+<li>历史峰值收盘 <strong>9.75（2025-11-26）</strong>，至 2026-07-27 盘中低点 <strong>2.92</strong>，累计回撤约 <strong>-70.0%</strong>（由工具给定价格推导）。</li>
+<li>自 2.92 低点反弹至 2026-09-10 盘中高 <strong>6.88</strong>（收盘 6.30），涨幅约 <strong>+135%</strong>，随后再度走弱。</li>
+<li><strong>200SMA 从 2026-07-08 的 6.24199 一路下行至 2026-11-05 的 5.20805（约 -16.6%）</strong>，且斜率向下未改。当前收盘 4.89 <strong>低于 200SMA 约 6.1%</strong>。</li>
+<li>50SMA（4.5952）与 200SMA（5.2081）仍相距约 0.61（≈13.3%），&quot;金叉&quot;远未形成，且价在 200SMA 下方，<strong>长期结论：熊市/宽幅震荡格局未结束。</strong></li>
+</ul>
+<h6>2. 中期（周线级别）：下降通道，但下沿获得修复</h6>
+<p>2026 年 9 月以来的高点序列与低点序列均持续下移，构成典型下降通道：</p>
+<div class="table"><table>
+<thead>
+<tr>
+<th>波段</th>
+<th>高点（日期）</th>
+<th>高点值</th>
+<th>低点（日期）</th>
+<th>低点值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2026-09-10</td>
+<td>6.88</td>
+<td>2026-09-28</td>
+<td>4.26</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2026-09-30</td>
+<td>6.73</td>
+<td>2026-10-23</td>
+<td>3.99</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2026-10-15</td>
+<td>5.64</td>
+<td>2026-11-02</td>
+<td>3.80</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2026-10-21</td>
+<td>5.13</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>高点下移：6.88 → 6.73 → 5.64 → 5.49（10-16 高）→ 5.13（10-21 高）→ 4.92（11-05 高至今）。</li>
+<li>低点下移：4.26 → 3.99 → 3.80。</li>
+<li>10-15 高 5.64 至 11-02 低 3.80 的一波下跌约 <strong>-32.6%</strong>，属急跌；本轮反弹从 3.80 升至 4.89，回补了该跌幅的约 <strong>59%</strong>（0.618 回撤位约在 <strong>4.94</strong>），<strong>价格正处于典型的&quot;决策位&quot;</strong>。</li>
+<li>值得注意的正向变化：50SMA 自 2026-09-30 的 4.2096 上升至 4.5952（约 +9.2%），是中期结构里唯一向上的均线，说明 7–9 月的上涨仍在均线体系内留下支撑。</li>
+</ul>
+<h6>3. 短期（日线级别）：四连阳，动能修复</h6>
+<ul>
+<li>2026-10-30 收 4.01 → 11-05 收 4.89，<strong>四个交易日累计约 +22.0%</strong>；自 11-02 低点 3.80 起算约 <strong>+28.7%</strong>。</li>
+<li>11-02 为典型反转 K 线：开 3.88（向下跳空）、低 3.80、高 4.41、收 4.41，收在全天最高，日内由低点回升约 16%。</li>
+<li>11-05 收盘 4.89 为 <strong>10-16（收 5.00）以来最高收盘价</strong>，已收复 10-21 的 4.86。</li>
+<li>均线位置：收盘 4.89 高于 10EMA（4.5554，+7.3%）、高于 50SMA（4.5952，+6.4%）、高于布林中轨（4.6915，+4.2%）；<strong>短中期均线全部转为多头排列（价格 &gt; 10EMA、50SMA）</strong>。</li>
+<li>但价格仍低于 VWMA 之外的全部中长期参照，且 VWMA 本身（4.5164）自 10-21 的 4.9356 持续下行——部分原因是 10-12 至 10-16 那批&quot;高价高量&quot;K 线正在滚出计算窗口（该期间成交量 210M–269M），属于<strong>机械性下移</strong>，不能简单解读为&quot;恐慌抛售&quot;。</li>
+</ul>
+<p><strong>多周期综合：短线多头、中线修复、长线空头。三者背离，是典型的&quot;反抽而非反转&quot;结构。</strong></p>
+<hr />
+<h5>四、动量指标解读</h5>
+<h6>RSI：55.60，中性偏多，仍有上行空间</h6>
+<ul>
+<li>2026-10-30 低点 39.84 → 11-05 的 55.60，快速回升但<strong>未进入超买区（70）</strong>，意味着短线仍有空间。</li>
+<li>关键含义：价格 4 天涨约 22%，RSI 却仅回到 55.6，说明此前动量极度疲弱（10 月下旬 RSI 长期在 40–47 徘徊），本轮属于&quot;从超弱修复到中性&quot;，<strong>尚未形成强趋势动量</strong>。</li>
+<li>若后续 RSI 在 60–70 区间钝化并伴随放量，才是趋势升级的证据；若 RSI 在 58–62 一带掉头，则大概率是反抽结束。</li>
+</ul>
+<h6>MACD：零轴下方金叉，修复性信号</h6>
+<ul>
+<li>MACD 线 <strong>-0.0252</strong>，信号线 <strong>-0.0366</strong>，柱状体 <strong>+0.0114</strong>。</li>
+<li>柱状体于 11-05 由负转正（11-04 为 -0.0217），为 <strong>10-19 之后首次转正</strong>，构成零轴以下的&quot;二次金叉&quot;雏形。</li>
+<li>但 MACD 线仍处负值区，且从 10-15 的高点 +0.1955 一路下滑至 10-30 的 -0.0947 后仅微弱回升。<strong>定性：空头动量的衰减，而非多头动量的确立。</strong></li>
+<li>交易含义：零轴下方的金叉在下跌通道中假信号率偏高（本票 9 月以来的两次类似信号均未能突破前高），必须配合价格突破 4.94–5.00 才具操作性。</li>
+</ul>
+<hr />
+<h5>五、波动率与风险度量</h5>
+<ul>
+<li><strong>ATR = 0.4155</strong>，占收盘价 <strong>约 8.5%</strong>；10-08 为 0.3530、11-02 为 0.4298，波动率处于高位且未收敛。</li>
+<li>1 个 ATR 的日常波动区间约为 <strong>4.47–5.31</strong>；这意味着&quot;4.89 买入、4.60 止损&quot;的 0.29 空间不足 0.7 个 ATR，<strong>极易被日常噪音打掉</strong>。</li>
+<li>布林带（来自已验证快照）：中轨 4.6915、上轨 5.4661、下轨 3.9169，带宽约 1.55（≈中轨的 33%）。价格位于中轨上方、距上轨尚有约 11.8%，<strong>尚未触及超买极值</strong>。</li>
+<li>该标的具备明显的&quot;一字板/极端跳空&quot;特征，例如 <strong>2026-09-01（开=高=低=收=4.73）、2026-09-02（开=高=低=收=5.20）、2026-04-23（开=高=低=收=5.51）、2026-07-15（3.52）</strong>。这使 ATR 系统性低估<strong>隔夜跳空风险</strong>，任何基于日内 ATR 的止损都可能失效。</li>
+</ul>
+<p><strong>风险结论：波动率决定了仓位必须显著缩小（建议为常规仓位的 1/2 或更低），且不宜在事件性窗口（如财报、停复牌、题材催化）前持有重仓。</strong></p>
+<hr />
+<h5>六、量能验证（VWMA 与成交量）</h5>
+<ul>
+<li>VWMA 4.5164，价格高于其 <strong>8.3%</strong>，短线买盘成本已被全面覆盖，属偏多信号。</li>
+<li>但<strong>量能未确认突破</strong>：11-02 至 11-05 成交量分别为 123.0M、152.7M、143.2M、152.5M，与其前 3 周约 150M 的均量基本持平；而 10-12 至 10-16 的下跌段成交量为 240.3M、211.6M、210.2M、269.4M、233.2M，<strong>明显高于本轮反弹量能</strong>。</li>
+<li>即&quot;下跌有量、上涨缩量&quot;——这是<strong>反弹质量偏弱</strong>的核心证据。11-05 量能较 11-04（143.2M）仅小幅放大至 152.5M，配合 +4.9% 的收盘涨幅，属&quot;温和改善&quot;而非&quot;放量突破&quot;。</li>
+</ul>
+<hr />
+<h5>七、关键价位地图（全部基于工具给定数据）</h5>
+<p><strong>上方阻力（阶梯式）</strong></p>
+<ol>
+<li><strong>4.92–5.00</strong>：11-05 最高 4.92 / 10-16 收盘 5.00，同时邻近 10-15→11-02 跌段的 0.618 回撤（约 4.94）——<strong>第一道，也是最关键的一道</strong>。</li>
+<li><strong>5.13</strong>：10-21 盘中高，通道内最近的一个&quot;高点下移&quot;节点；突破它才构成&quot;高点不再下移&quot;。</li>
+<li><strong>5.2081</strong>：200SMA，长期多空分界。</li>
+<li><strong>5.4661</strong>：布林上轨；<strong>5.49</strong>（10-16 高）与 <strong>5.64</strong>（10-15 高）为通道上轨区。</li>
+</ol>
+<p><strong>下方支撑（密集区）</strong></p>
+<ol>
+<li><strong>4.55–4.60</strong>：10EMA 4.5554 + 50SMA 4.5952 + 11-05 最低 4.59，三条证据重合，<strong>是本轮反弹的生死线</strong>。</li>
+<li><strong>4.6915</strong>：布林中轨（在价格下方，构成第一层&quot;失守即转弱&quot;的观察位）。</li>
+<li><strong>4.41</strong>：11-02 收盘（反转日收盘价，多头成本区）。</li>
+<li><strong>4.01</strong>：10-30 收盘；<strong>3.92</strong>：布林下轨；<strong>3.80</strong>：11-02 低点（本轮起涨点）。</li>
+</ol>
+<hr />
+<h5>八、可执行交易方案</h5>
+<h6>情景 A｜突破确认（概率中等偏低，但赔率最佳）</h6>
+<ul>
+<li><strong>触发条件</strong>：日收盘 <strong>&gt; 5.00</strong>（有效站上 4.92–5.00 阻力带），且当日成交量 <strong>&gt; 200M</strong>（即超过 10-12 至 10-16 下跌段的量级）。</li>
+<li><strong>操作</strong>：顺势建仓/加仓，仓位不超过常规的 60%（波动率调整后）。</li>
+<li><strong>止损</strong>：跌破 <strong>4.69</strong>（布林中轨）或单日跌幅超过 1 ATR（约 0.42）。</li>
+<li><strong>目标</strong>：T1 <strong>5.13</strong> → T2 <strong>5.21（200SMA）</strong> → T3 <strong>5.47（布林上轨）/ 5.64</strong>。</li>
+</ul>
+<h6>情景 B｜区间消耗（概率最高）</h6>
+<ul>
+<li><strong>区间</strong>：4.40–4.95 反复震荡，MACD 在零轴下方横向摆动。</li>
+<li><strong>操作</strong>：不追涨、不猜顶；已持仓者以 4.55 为止损线持有；空仓者观望，等待区间边缘给出&quot;缩量回踩 4.55–4.60 后重新放量&quot;的低吸机会（试仓 ≤ 常规仓位的 1/3）。</li>
+</ul>
+<h6>情景 C｜反抽失败（概率中等）</h6>
+<ul>
+<li><strong>触发条件</strong>：在 4.92–5.00 受阻并<strong>收盘跌破 4.55</strong>（10EMA/50SMA 复合支撑）。</li>
+<li><strong>操作</strong>：清短线仓；若进一步收盘跌破 <strong>4.41</strong>，视为 11-02 反转日多头全部被套，回看 <strong>4.01 → 3.92（布林下轨）→ 3.80</strong>，并可能形成新的&quot;低点下移&quot;。</li>
+</ul>
+<h6>仓位与风控纪律</h6>
+<ul>
+<li>由于 ATR/价格 = 8.5%，若以 1% 账户风险、1.2 ATR（约 0.49）止损计算，单笔仓位应控制在净值的 <strong>10% 左右</strong>（4.89 − 0.49 = 4.40 止损），而非满仓参与。</li>
+<li><strong>不建议在 4.89 现价追多</strong>：向上 1 ATR 即到 5.31（正处 200SMA 5.21 上方阻力区），向下 1 ATR 到 4.47（跌破全部均线支撑），<strong>风险回报不对称</strong>。</li>
+</ul>
+<hr />
+<h5>九、风险提示与信号失效条件</h5>
+<ol>
+<li><strong>趋势级别风险</strong>：收盘价低于 200SMA 约 6.1%，且 200SMA 仍在下行，任何反弹在统计上首先应被假设为&quot;反抽&quot;。</li>
+<li><strong>量价背离风险</strong>：反弹量能（约 143M–153M）明显低于下跌段（210M–269M），缺乏增量资金证据。</li>
+<li><strong>跳空风险</strong>：本标的多次出现一字板（2026-09-01、09-02、04-23、07-15），隔夜风险无法用 ATR 度量。</li>
+<li><strong>信号失效</strong>：① 收盘失守 4.55 → 短线多头逻辑失效；② MACD 柱状体重新转负（当前 +0.0114，极其薄弱，一日反转即可能翻负）→ 金叉作废；③ 收盘失守 4.41 → 中期结构重回下行。</li>
+</ol>
+<hr />
+<h5>十、指标选择理由（共 8 项）</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>选用理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>close_10_ema</strong>（4.5554）</td>
+<td>捕捉本轮 4 日反弹的即时动能，并提供最贴近价格的止损参照；对急涨急跌的 A 股弹性标的反应及时。</td>
+</tr>
+<tr>
+<td><strong>close_50_sma</strong>（4.5952）</td>
+<td>中期趋势基准与动态支撑；也是本票唯一上行的均线，用于判断&quot;7–9 月上涨留下的结构是否仍有效&quot;。</td>
+</tr>
+<tr>
+<td><strong>close_200_sma</strong>（5.2081）</td>
+<td>长期多空分界，直接给出&quot;反弹 vs 反转&quot;的客观标尺，并锁定 5.21 这一核心阻力。</td>
+</tr>
+<tr>
+<td><strong>rsi</strong>（55.60）</td>
+<td>用 70/30 框架衡量动量位置：确认&quot;已修复但未超买&quot;，为上行留出空间，同时也提示动量强度不足。</td>
+</tr>
+<tr>
+<td><strong>macd</strong>（-0.0252）</td>
+<td>识别零轴下方的趋势动量转折，区分&quot;动量衰减&quot;与&quot;动量反转&quot;。</td>
+</tr>
+<tr>
+<td><strong>macdh</strong>（+0.0114）</td>
+<td>比 MACD 线更早给出金叉时点（11-04→11-05 由 -0.0217 转正），且能直观判断信号强度之薄弱。</td>
+</tr>
+<tr>
+<td><strong>atr</strong>（0.4155）</td>
+<td>波动率与仓位管理核心：8.5% 的日波动率直接决定&quot;必须缩仓 + 放宽止损&quot;，避免机械止损被打掉。</td>
+</tr>
+<tr>
+<td><strong>vwma</strong>（4.5164）</td>
+<td>唯一整合成交量的均价，用于检验反弹是否有量能背书，并揭示&quot;下跌有量、上涨缩量&quot;的质量缺陷。</td>
+</tr>
+</tbody>
+</table></div>
+<p>（布林带上/中/下轨 5.4661 / 4.6915 / 3.9169 引自已验证快照，作为阻力位与超买超卖的辅助校准层，未计入上述 8 项核心指标，以避免与均线/ATR 信息重叠。）</p>
+<hr />
+<h5>十一、关键要点汇总表</h5>
+<div class="table"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>指标 / 价位</th>
+<th>最新读数（2026-11-05）</th>
+<th>相对位置</th>
+<th>技术解读</th>
+<th>交易含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最新价</td>
+<td>收盘 / 开高低</td>
+<td>4.89（O 4.60 / H 4.92 / L 4.59）</td>
+<td>—</td>
+<td>四连阳、收于当日高点附近，为 10-16 以来最高收盘</td>
+<td>短线强势，但已连涨 4 日，追高性价比低</td>
+</tr>
+<tr>
+<td>量能</td>
+<td>成交量</td>
+<td>152,526,410</td>
+<td>≈近 3 周均量</td>
+<td>反弹量能低于 10-12~10-16 下跌段的 210M–269M</td>
+<td>突破未获量能确认，警惕假突破</td>
+</tr>
+<tr>
+<td>短线</td>
+<td>close_10_ema</td>
+<td>4.5554</td>
+<td>价格高出 +7.3%</td>
+<td>短期动能转多，但偏离度已偏大</td>
+<td>回踩 4.55 为多头最后防线</td>
+</tr>
+<tr>
+<td>中线</td>
+<td>close_50_sma</td>
+<td>4.5952</td>
+<td>价格高出 +6.4%</td>
+<td>唯一上行均线（自 4.2096 于 9-30 升至此）</td>
+<td>4.55–4.60 为复合支撑带</td>
+</tr>
+<tr>
+<td>长线</td>
+<td>close_200_sma</td>
+<td>5.2081</td>
+<td>价格低于 -6.1%</td>
+<td>自 6.24199（7-08）持续下行，约 -16.6%</td>
+<td>长期趋势仍偏空，5.21 为关键阻力</td>
+</tr>
+<tr>
+<td>动量</td>
+<td>RSI</td>
+<td>55.60</td>
+<td>中性偏多</td>
+<td>由 39.84（10-30）回升，未超买</td>
+<td>仍有空间，但需放量配合</td>
+</tr>
+<tr>
+<td>动量</td>
+<td>MACD / 信号 / 柱</td>
+<td>-0.0252 / -0.0366 / +0.0114</td>
+<td>零轴下方金叉</td>
+<td>10-19 后柱状体首次转正，强度极弱</td>
+<td>仅属&quot;空头动量衰减&quot;，需价格突破确认</td>
+</tr>
+<tr>
+<td>波动</td>
+<td>ATR</td>
+<td>0.4155</td>
+<td>占价 8.5%</td>
+<td>1 ATR 区间约 4.47–5.31</td>
+<td>仓位需减半，止损需 ≥1 ATR</td>
+</tr>
+<tr>
+<td>波动</td>
+<td>布林 中/上/下</td>
+<td>4.6915 / 5.4661 / 3.9169</td>
+<td>价格在中轨上方</td>
+<td>距上轨约 11.8%，未触及极值</td>
+<td>5.47 为最终目标区，3.92 为下行极值参考</td>
+</tr>
+<tr>
+<td>量价</td>
+<td>VWMA</td>
+<td>4.5164</td>
+<td>价格高出 +8.3%</td>
+<td>20 日成本重心仍下移（价格窗口滚动所致）</td>
+<td>短线偏多，但中期成本压力未消</td>
+</tr>
+<tr>
+<td>结构</td>
+<td>高点序列</td>
+<td>6.88→6.73→5.64→5.49→5.13→4.92</td>
+<td>持续下移</td>
+<td>下降通道未破，11-05 高点仍低于 10-21 高点</td>
+<td>需站上 5.13 才算&quot;高点不再下移&quot;</td>
+</tr>
+<tr>
+<td>结构</td>
+<td>低点序列</td>
+<td>4.26→3.99→3.80</td>
+<td>持续下移</td>
+<td>11-02 创出新的更低低点</td>
+<td>反转需先出现&quot;更高低点&quot;</td>
+</tr>
+<tr>
+<td>关键位</td>
+<td>阻力阶梯</td>
+<td>4.92–5.00 / 5.13 / 5.2081 / 5.47 / 5.64</td>
+<td>—</td>
+<td>4.94 兼具 0.618 回撤与 10-16 收盘 5.00 双重意义</td>
+<td>分批止盈参考</td>
+</tr>
+<tr>
+<td>关键位</td>
+<td>支撑阶梯</td>
+<td>4.55–4.60 / 4.41 / 4.01 / 3.92 / 3.80</td>
+<td>—</td>
+<td>4.55–4.60 为 10EMA+50SMA+当日低点三重共振</td>
+<td>破 4.55 即短线逻辑失效</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rating</strong>: Hold</p>
+<p><strong>FINAL TRANSACTION PROPOSAL: HOLD</strong></p>
+</section><section id="s2"><h2>II. Research Team Decision</h2><h3 id="s2-1">Bull Researcher</h3>
+<p>Bull Analyst: 熊派朋友，先别急着把 000892.SZ 判成“下跌通道里的反抽”。我承认，收盘 4.89 仍低于 200SMA 5.2081 约 6.1%，这是空头目前最硬的论据。但你看的是后视镜，我看的是正在发生的边际变化：000892.SZ 已经从 3.80 拉到 4.89，四个交易日涨约 22%，自 11-02 低点起涨约 28.7%，11-05 收 4.89 是 10-16 以来最高收盘，而且收在当日高点 4.92 附近。这不是弱反抽，这是多头开始夺回定价权。</p>
+<p>先说明一点：本次材料没有公司基本面、新闻和情绪报告，我不会编造营收预测和护城河。但作为多头，我基于可验证的价格、量能和指标来论证 000892.SZ 的上行赔率。增长潜力在盘面上的映射非常直接：000892.SZ 从 2.92 到 6.88 曾走出约 +135% 的修复，说明一旦预期改善，它的弹性极大；当前从 3.80 到 4.89 只是第二段修复的起点。若站上 5.00，第一目标 5.13，第二目标 5.2081，进一步看 5.4661 甚至 5.64，较 4.89 有约 5% 到 15% 的空间。熊派要求所有信号完美才承认反转，但等 200SMA 走平、量能完美放大，价格大概率已经在 5.2 上方。</p>
+<p>再看竞争优势。000892.SZ 的基本面护城河本次材料没有提供，我不虚构；但它的交易结构优势非常明显：2026-09-01、09-02、04-23、07-15 多次出现一字板，说明筹码锁定能力强、事件驱动下封板基因强，空头很难在关键位持续压出新低。11-02 那天开 3.88、低 3.80、高 4.41、收 4.41，收在全天最高，日内从低点回升约 16%，这是典型的反转 K 线。再加上 50SMA 从 9-30 的 4.2096 升至 4.5952，涨幅约 9.2%，是当前均线体系里唯一上行的均线，说明中期成本支撑正在重建。价格高于 10EMA 4.5554 约 7.3%，高于 50SMA 4.5952 约 6.4%，高于布林中轨 4.6915 约 4.2%，高于 VWMA 4.5164 约 8.3%，短线买盘成本已被全面覆盖。</p>
+<p>动量指标也在支持多头。RSI 55.60，从 10-30 的 39.84 快速回升，但还没进入 70 超买区，说明上行空间仍在。MACD 线 -0.0252、信号线 -0.0366、柱状体 +0.0114，11-05 柱状体由 11-04 的 -0.0217 转正，是 10-19 之后首次转正，零轴下方二次金叉的雏形已经出现。熊派会说“零轴下方金叉假信号多”，没错，所以我不让你在 4.89 满仓追；但假信号多不等于没有真信号，关键看价格能否突破 4.92–5.00。4.94 附近同时是 10-15 到 11-02 跌段的 0.618 回撤位，10-16 收盘又是 5.00，这里一旦放量站上，空头的“高点下移”逻辑就被打破了。</p>
+<p>逐条回应熊派最担心的几个点。</p>
+<p>第一，你说 200SMA 仍在下行。对，200SMA 从 7-08 的 6.24199 降到 5.20805，约 -16.6%，但均线是滞后指标。价格现在离 5.2081 只有 6.1%，50SMA 已经上行 9.2%，价格又站上 10EMA 和 50SMA，这是底部构筑的早期特征，不是继续崩塌的特征。真等 200SMA 拐头，000892.SZ 可能已经在 5.5 以上。</p>
+<p>第二，你说高点下移、低点下移。过去确实如此：6.88→6.73→5.64→5.49→5.13→4.92，低点 4.26→3.99→3.80。但 11-02 的 3.80 是带长下影的反转低点，收在 4.41 最高；只要回踩 4.41–4.55 不破，更高低点就会形成。突破 5.00 后，4.92 这个“更低高点”也失效。熊派拿旧结构否定新变化，是刻舟求剑。</p>
+<p>第三，你说量能不够。11-02 到 11-05 成交量分别是 123.0M、152.7M、143.2M、152.5M，确实低于 10-12 到 10-16 下跌段的 210M–269M。但下跌段大量是恐慌盘和高价窗口滚出，VWMA 下移也有机械因素。152.5M 不是地量，而是接近近三周均量，说明抛压衰竭、买盘稳定。突破当然需要 &gt;200M 确认，但第一波修复不需要完美量能；等完美量能，往往买在 5.2 上方。</p>
+<p>第四，你说 ATR 8.5% 太高。高波动不是不参与的理由，而是仓位管理的理由。ATR 0.4155，1 个 ATR 区间约 4.47–5.31，所以不能重仓追，但可以用分批和止损参与。以 1% 账户风险、约 1.2 ATR 止损计算，单笔仓位控制在净值 10% 左右，这恰恰是多头可以执行的方案。</p>
+<p>所以我的交易逻辑不是“4.89 闭眼满仓”，而是“分批做多 000892.SZ”。回踩 4.55–4.60 不破，是 10EMA、50SMA 和 11-05 最低 4.59 的三重共振区，可先试仓三分之一；收盘站上 5.00 且成交量 &gt;200M，再加仓；止损放在收盘跌破 4.55，跌破 4.41 则中期逻辑失效。目标依次看 5.13、5.2081、5.4661–5.64。熊派说现价风险回报不对称，我部分同意，所以不追高；但把“不追高”等同于“不买入”，就错过了底部修复最肥的一段。</p>
+<p>总结一句：000892.SZ 当前是短线多头、中线修复、长线待确认，熊派只盯长线空头，却忽略了短中期的边际改善。多头不需要等到所有指标完美，只需要在关键位用小仓位试错、在确认后加仓。对我而言，000892.SZ 的上行赔率已经明显改善，应该从“观望”转向“分批买入”。</p>
+<p><strong>Rating</strong>: Buy<br />
+FINAL TRANSACTION PROPOSAL: BUY</p>
+<h3 id="s2-2">Bear Researcher</h3>
+<p>Bear Analyst: 牛派朋友，你的数据我大多认，但结论我不认。000892.SZ 现在更像是“下跌通道里的超跌反抽进入阻力区”，不是“多头夺回定价权”。你看到的是四天 +22%、站上 10EMA 和 50SMA；我看到的是这四天上涨之前，000892.SZ 刚从 6.88 跌到 3.80，跌幅约 44.8%，而当前 4.89 仍低于 200SMA 5.2081 约 6.1%，200SMA 从 6.24199 一路下行到 5.20805，长期趋势根本没有扭转。把“价格离 200SMA 只有 6.1%”说成底部早期特征，是拿还没有发生的事当证据。</p>
+<p>第一，你说“边际改善”。对，但边际改善不等于趋势反转。000892.SZ 的高点序列仍是 6.88→6.73→5.64→5.49→5.13→4.92，低点序列仍是 4.26→3.99→3.80。11-02 的 3.80 是反转 K 线没错，但它同时也是一个“更低低点”。你说只要回踩 4.41–4.55 不破就会形成更高低点——这是条件句，不是事实。现在更高低点没确认，5.00 没突破，5.13 没站上，200SMA 没收复，凭什么把“反抽”改判成“反转”？</p>
+<p>第二，量能是你论证里最软的一块。11-02 到 11-05 成交量是 123.0M、152.7M、143.2M、152.5M，而 10-12 到 10-16 下跌段是 210M–269M。你说这是“抛压衰竭、买盘稳定”，但更直接的解读是“下跌有量、上涨缩量”，缺乏增量资金。VWMA 4.5164 仍低于价格 8.3%，且本身从 10-21 的 4.9356 持续下移。价格高于 VWMA 只说明短线买家浮盈，不说明中期成本压力消失；浮盈盘在 4.92–5.00 一带反而容易兑现。突破当然需要 &gt;200M，但你现在没有；没有量能确认的突破，在 000892.SZ 这种高波动票上假信号率很高。</p>
+<p>第三，动量指标没有你说得那么强。RSI 55.60，从 39.84 回升不假，但 55.6 只是中性偏多，不是强趋势动量；下跌趋势中的 RSI 经常在 55–60 就掉头。MACD 线 -0.0252 仍在零轴下方，柱状体 +0.0114 极其薄弱，一天就能翻负。零轴下方金叉在 000892.SZ 9 月以来的结构里已经出现过类似信号，结果都没有突破前高。你把“空头动量衰减”说成“多头动量确立”，中间差了一次放量突破 5.00 的确认。</p>
+<p>第四，风险回报不对称。现价 4.89，向上第一道 4.92–5.00，第二道 5.13，第三道 200SMA 5.2081；到 5.13 只有约 +4.9%，到 5.21 约 +6.5%。向下呢？4.55–4.60 是 10EMA、50SMA、11-05 低点三重共振，跌破就是 -7%；4.41 是反转日收盘，跌破约 -9.8%；再往下 4.01、3.92、3.80，分别约 -18%、-20%、-22%。你要先突破两道阻力才能看到 5.47–5.64 的 12%–15% 空间，但下方支撑一旦失守，回撤远大于第一目标涨幅。你说“不追高、分批买入”，可 4.89 本身就是不上不下的位置：要么等回踩 4.55–4.60，要么等收盘 &gt;5.00 且量能 &gt;200M；现价买入既不是低吸，也不是确认突破。</p>
+<p>第五，ATR 8.5% 不是“仓位管理就能解决”的小问题。ATR 0.4155，4.89 到 4.55 只有 0.34，约 0.82 个 ATR，你的止损线就在日常噪音里；如果按 1.2 ATR 止损，止损要到 4.39 附近，已经跌破 4.41 这个中期逻辑位，单笔风险约 10%。更关键的是，000892.SZ 有多次一字板记录：2026-09-01、09-02、04-23、07-15。隔夜跳空风险无法用日内 ATR 度量，止损可能直接失效。你把这叫“筹码锁定能力强”，我反过来看：这更像是事件驱动下的流动性真空，涨的时候封得死，跌的时候也跑不掉，不是护城河，是尾部风险。</p>
+<p>第六，你说“没有基本面就只看盘面”。问题是，没有基本面、新闻、情绪报告，就无法给 000892.SZ 的估值重估提供任何可验证支撑。纯技术反抽可以做交易，但不能当投资逻辑。你拿 2.92 到 6.88 的 +135% 证明弹性，我也提醒你：同一段弹性之后，000892.SZ 从 6.88 跌到 3.80，回撤 44.8%；从 9.75 到 2.92 更是 -70%。弹性是双向的，不是只向上。</p>
+<p>最后回应你“等 200SMA 拐头会错过”的说法。趋势确认从来不是等所有指标完美，而是等关键阻力被有效突破。现在 000892.SZ 连 4.92–5.00 都没站上，5.13 没破，200SMA 没收复，你就把“分批买入”摆在前面，本质是在下跌趋势里猜底。我的结论很简单：000892.SZ 的短线反抽已经进入阻力区，量能不支持突破，长线趋势仍空，现价的风险回报对多头不利。已有仓位应在 4.92–5.00 一带减仓，空仓者不要参与；跌破 4.55 短线逻辑失效，跌破 4.41 中期结构重回下行。</p>
+<p><strong>Rating</strong>: Sell
+FINAL TRANSACTION PROPOSAL: SELL</p>
+<h3 id="s2-3">Research Manager</h3>
+<p><strong>Recommendation</strong>: Underweight</p>
+<p><strong>Rationale</strong>: 本轮辩论中，多空双方对 000892.SZ 的基础数据分歧不大，分歧在解读。多头抓住的边际改善是真实的：11-02 低点 3.80 至 11-05 收盘 4.89，四个交易日约 +22%，收在 10-16 以来最高收盘价，价格站上 10EMA、50SMA，RSI 从 39.84 回升至 55.60，MACD 柱体在 11-05 由负转正。这些说明短线下跌动能在衰减。但空头的结构性论据更硬：价格仍低于 200SMA 5.2081 约 6.1%，高点序列（6.88→6.73→5.64→5.49→5.13→4.92）和低点序列（4.26→3.99→3.80）仍在下移；本轮上涨量能 123.0–152.5M 明显低于 10-12 至 10-16 下跌段的 210M–269M，更接近“下跌有量、反弹缩量”；现价 4.89 上方紧邻 4.92–5.00、5.13、5.2081 多重阻力，第一目标空间仅约 +4.9% 到 +6.5%，而下方 4.55、4.41 的止损距离对应 -7% 到 -9.8%，风险回报对多头明显不对称。多头自己的方案也是“不追高、等回踩 4.55–4.60 或放量站上 5.00 再加仓”，等于承认现价不是好的介入点。综合看，空头在趋势、量能和风险回报上占优，多头的动能改善尚不足以把反抽改判为反转，故定 Underweight；但不下 Sell，因为短线动能尚未衰竭，且一旦收盘站稳 5.00 且量能 &gt;200M，结构会改变，全面看空为时过早。</p>
+<p><strong>Strategic Actions</strong>: 1) 现价 4.89 不新增多头仓位；若交易账户已持有 000892.SZ 的标准仓位，建议在 4.92–5.00 阻力区逢高减仓三分之一至二分之一，将敞口降至低配。2) 不主动做空：短期动量向上，且 000892.SZ 有多次一字板记录，隔夜跳空与挤空风险不适合裸空。3) 设双向触发条件：若收盘站稳 5.00 且成交量 &gt;200M，重新评估，可考虑把仓位加回中性甚至超配；若回踩 4.55–4.60 区间不破，允许以账户风险 1%、约 1.2 ATR 止损的小仓位试多（单笔约净值的 10%），止损参考收盘跌破 4.55；若收盘跌破 4.41，视为中期结构重回下行，清掉剩余仓位。4) 关键位备忘：上方 4.92–5.00、5.13、200SMA 5.2081；下方 4.55–4.60、4.41、4.01/3.92/3.80。5) 本次材料缺少 000892.SZ 的基本面、新闻与情绪报告，无法验证估值重估逻辑，所有仓位决策只能按技术面短线/中线纪律执行，不得以“价值修复”为由加大敞口。</p>
+</section><section id="s3"><h2>III. Trading Team Plan</h2><h3 id="s3-1">Trader</h3>
+<p><strong>Action</strong>: Sell</p>
+<p><strong>Reasoning</strong>: 研究计划的结论是 Underweight，按框架应执行卖出（减配），而非因技术面&quot;Hold&quot;与技术面冲突就改为观望。结构性证据指向下行占优：000892.SZ 收盘 4.89 仍低于 200SMA 5.2081 约 6.1%，且 200SMA 自 7-08 的 6.2420 一路下行；高点序列 6.88→6.73→5.64→5.49→5.13→4.92 与低点序列 4.26→3.99→3.80 均在持续下移，9 月以来的下降通道未破。量价质量同样不支持突破：本轮反弹量能 123.0–152.5M，明显低于 10-12 至 10-16 下跌段的 210M–269M，&quot;下跌有量、上涨缩量&quot;。风险回报不对称：自 4.89 向上至第一阻力带 4.92–5.00 仅约 +0.6%~+2.2%（至 5.13 约 +4.9%），向下至 4.55 的纪律线约 -7%，而 ATR 0.4155（占价 8.5%）意味着日内噪音即可吃掉整个止损空间。因此不新增多头、趁反弹减仓是合理的；但只做&quot;减配&quot;不做全额清仓或反向做空，因为 11-05 MACD 柱体由负转正（+0.0114）、收在 10-16 以来最高收盘、且一旦收盘站稳 5.00 且量能 &gt;200M 结构即改变，同时该标的多次一字板（09-01、09-02、04-23、07-15），隔夜跳空风险不适合裸空。</p>
+<p><strong>Entry Price</strong>: 4.89</p>
+<p><strong>Stop Loss</strong>: 4.55</p>
+<p><strong>Position Sizing</strong>: 若已持有 000892.SZ 标准仓位，在 4.89–5.00 区域减仓三分之一至二分之一，将敞口降至低配；剩余仓位以收盘跌破 4.55 为离场线（4.55 下方即 10EMA 4.5554 与 50SMA 4.5952 复合支撑失守，短线逻辑失效，进一步破 4.41 则清空剩余）。不新增多头、不做裸空。空仓者不建立新仓，仅在&quot;收盘站上 5.00 且成交量 &gt;200M&quot;时重新评估加回中性；如回踩 4.55–4.60 不破且重新放量，可用账户风险约 1%、止损参考 4.40（约 1.2 ATR）的小仓位试多，单笔不超过净值 10%。</p>
+<p>FINAL TRANSACTION PROPOSAL: <strong>SELL</strong></p>
+</section><section id="s4"><h2>IV. Risk Management Team Decision</h2><h3 id="s4-1">Aggressive Analyst</h3>
+<p>Aggressive Analyst: 先开这个局，因为这一局最关键的一点被三位分析师全都看反了：这笔卖出不是防守动作，而是一次主动的进攻性下注。真正的激进不是握着筹码死扛，而是在赔率对你最不利的那一秒钟，把子弹从枪膛里退出来，留给第二天真正点火的那一刻。000892.SZ 现在收盘 4.89，四天涨了 22%，从 3.80 起算涨了 28.7%，市场情绪刚刚变暖，而交易员的指令是趁这股暖流减仓。这才是逆着人群下手的动作，需要真正的信念。而&quot;持有观察&quot;是全场最舒服、也最昂贵的姿势。</p>
+<p>先把赔率摆到桌面上。从 4.89 往上，第一道阻力带 4.92–5.00 就在 0.6% 到 2.2% 之外，那里同时压着 10-16 的收盘 5.00 和 10-15 至 11-02 跌段的 0.618 回撤位 4.94；再往上到 5.13 是 4.9%，而 5.2081 的 200SMA 是长期多空分界，且这条线从 7-08 的 6.2420 一路下滑 16.6%，本身还在往下压。往下呢？到 4.55 的纪律线是 -7%，而 ATR 是 0.4155、占价 8.5%，意味着一天的正常呼吸就能把整段止损空间吞掉。用 7% 的确定风险去博 0.6% 到 2.2% 的拥挤空间，这不是保守与激进的差别，这是数学上的自我伤害。激进资本从不拒绝风险，但绝不会为这么糟糕的赔付结构买单。所以交易员选择卖，不是害怕波动，是拒绝一笔负期望的交易。</p>
+<p>中立派的结论是 HOLD，我很清楚他们会搬出什么：MACD 柱体 11-05 由 -0.0217 转正到 +0.0114，是 10-19 之后首次翻红，零轴下方二次金叉的雏形；RSI 55.60 尚未超买，还有空间；价格站上 10EMA 4.5554 和 50SMA 4.5952，短中期均线转多。听起来像三重利好，但逐条称重就散了。柱体 +0.0114 是什么量级？是 ATR 的 2.7%，一天之内就能翻负，报告自己都写明这是&quot;空头动量的衰减，而非多头动量的确立&quot;，而且 9 月以来两次同类零轴下方金叉全部没能突破前高。RSI 只回到 55.6 而价格涨了 22%，恰恰说明这轮动量是&quot;从极弱修复到中性&quot;，不是&quot;强趋势启动&quot;。至于均线，价格站在短期均线上方 7.3%，同时在 200SMA 下方 6.1%，这不叫多头排列，这叫空头结构里的反抽。最要命的是中立派自己的数字最后反过来打了自己一巴掌：他们说在 4.89 追多不可取，因为向上一个 ATR 是 5.31（正压在 200SMA 5.21 的阻力区上方），向下一个 ATR 是 4.47（跌破全部均线支撑）。如果一个位置向上是阻力、向下是无支撑，那结论只能是减仓，绝不能是&quot;持有&quot;。&quot;持有&quot;意味着你既不敢加、也不敢减，用被动承受全部下行风险来换取不做决定的心理舒适——这是三种选择里唯一没有任何论据支撑的那一种。</p>
+<p>我也替保守派把话说完。如果他们说&quot;要卖就清干净、彻底离场、别碰这种高波动票&quot;，那是把风控做成了偷懒。清仓等于同时放弃了两个最锋利的凸性机会。第一，报告给的突破情景赔率极佳：收盘站上 5.00 且量能超 200M，顺势介入并指向 5.13、5.21、5.47 甚至 5.64，那是 5% 到 15% 的空间，而触发条件是完全客观、可机械执行的。你必须有弹药才能接这一枪。第二，4.55–4.60 是 10EMA、50SMA 与 11-05 最低价 4.59 的三重共振区，在那里用账户风险 1%、止损 4.40（约 1.2 个 ATR）、单笔不超过净值 10% 的小仓位试多，是典型的高赔率低损耗结构——清仓者连这个仓位都配不出来。反过来，如果保守派说的是&quot;别急着卖，等跌破 4.55 确认了再走&quot;，那才是真正的高危建议：等到 4.55 确认，你已经吐出 7%，而这票有一字板的历史——09-01 的 4.73、09-02 的 5.20、04-23 的 5.51、07-15 的 3.52，全部是开盘即封、无法交易的形态。下行确认一旦以跳空方式到来，你连卖出的流动性都没有。真正的激进执行是反过来的：在 4.89 到 5.00 这段还有买盘接货的窗口里把减仓做完，用别人的追高热情给自己提供出场流动性，而不是在市场已经破位、买盘蒸发之后排队割肉。</p>
+<p>所以我要把这个方案往更锋利的方向再推一格：减仓比例不要停在&quot;三分之一到二分之一&quot;的下沿，就在 4.89–5.00 区间做满二分之一，甚至如果盘中有 4.95 以上的冲高，做到上限偏上。理由是现成的：反弹量能只有 123.0M 到 152.5M，而 10-12 至 10-16 的下跌段是 210.2M 到 269.4M。&quot;下跌有量、上涨缩量&quot;意味着这波抬升没有增量资金背书，只是存量在修复，缩量反弹的顶部从来不会给你第二次报价机会。同时，减仓这个动作本身的期望值就已经是正的：如果你按 4.89 卖掉一半，即使后面真突破到 5.64，那一半只少赚了 7.5% 的机会成本；但如果反抽在 4.94 失败，你避掉的是回到 4.41、再看 4.01、3.92 甚至 3.80 的整段跌幅，那是 10% 到 22%。这不是恐惧定价，这是凸性定价。</p>
+<p>至于不做裸空这一条，我要给它一个更硬的辩护，因为它恰恰是激进风控的教科书示例，而不是怯懦。裸空的赔付结构是线性的、亏损无上限的，而 000892.SZ 的路径是离散跳跃的——四次一字板记录告诉你，这票可以在你无法交易的价格上把你打穿。表达看空最高效的方式不是线性做空，而是持有现金加上一个明确的重进场触发器：收盘 &gt;5.00 且量能 &gt;200M 就掉头加回中性、按常规仓位 60% 顺势做多；收盘跌破 4.55 就把剩余清零，跌破 4.41 则确认 11-02 那根反转日的多头全部被套，那时再考虑有明确风险预算的战术性空头也不迟。看空的凸性来自&quot;手里有钱、脚下有触发条件&quot;，而不是来自隔夜裸敞口。</p>
+<p>最后我要把话说透：000892.SZ 的高点序列 6.88→6.73→5.64→5.49→5.13→4.92 一路下移，低点序列 4.26→3.99→3.80 一路下移，200SMA 还在往下走，长期峰值 9.75 至今回撤七成。在这样的结构里，&quot;持有等确认&quot;每年都要交一遍学费。市场不会奖励那些在下降通道里祈祷反转的人，它只奖励动作快、仓位对、并且在下一次点火时有子弹的人。卖出 000892.SZ 的这部分敞口，就是在为那个 5.00 加 200M 的引爆点预留期权。这才是高回报的路径。</p>
+<p><strong>Rating</strong>: SELL
+FINAL TRANSACTION PROPOSAL: <strong>SELL</strong></p>
+<h3 id="s4-2">Conservative Analyst</h3>
+<p>Conservative Analyst: 我先把立场摆明：我支持对 000892.SZ 执行卖出，但我不接受激进派把这件事包装成“进攻性下注”。对保守风险官而言，卖出不是因为我们要去赚反抽失败的钱，而是因为 000892.SZ 当前的风险预算已经恶化：收盘 4.89 仍在 200SMA 5.2081 下方约 6.1%，200SMA 从 7-08 的 6.2420 一路下行，高点序列 6.88→6.73→5.64→5.49→5.13→4.92 和低点序列 4.26→3.99→3.80 都在下移，这仍是下降通道里的技术性反抽，不是趋势反转。这个时候最重要的不是“保留多少凸性”，而是让组合在跳空和继续下探中活下来。</p>
+<p>激进派说要在 4.89–5.00 做满二分之一甚至上限偏上，方向上我理解，但理由必须改成风险预算驱动，而不是“机会成本只有 7.5%”这种叙事。4.89 到 4.55 只有 0.34，约 0.82 个 ATR，而 ATR 是 0.4155、占价 8.5%，日内噪音就可能穿透这条线。更关键的是，4.55 不是最终底，4.41、4.01、3.92、3.80 依次在下方，4.89 到 3.80 是约 -22.3% 的尾部空间。000892.SZ 还有 09-01 的 4.73、09-02 的 5.20、04-23 的 5.51、07-15 的 3.52 这类一字板记录，ATR 根本度量不了隔夜跳空风险。所以剩余仓位不能按“反正有 4.55 止损”来留，而要按“即使跳空到 3.80，损失也不突破账户风险预算”来倒算。卖出要分批、限价、利用 4.89–5.00 还有买盘接货的窗口完成，而不是等破位后排队。</p>
+<p>激进派还说清仓会放弃“5.00 加 200M”的突破期权，我不认同把这个位置当成必须保留重仓的理由。5.00 只是第一道阻力，4.94 是 0.618 回撤，5.13 是前高，5.2081 才是 200SMA 长期分界，而且这条线还在下行。量能 200M 也仍低于 10-12 至 10-16 下跌段的 210M–269M，单日放量完全可能是脉冲。对保守账户，收盘站上 5.00 且量能超 200M 只够“重新评估”，不够“加回中性”；要重新承担趋势风险，至少要看到连续两日收盘站上 5.13、量能超过 210M，最好再站上 5.2081 并回踩不破。否则就是拿真金白银去赌一个尚未确认的假突破。至于 4.55–4.60 的小仓位试多，我建议直接删除：低点仍在下移，没有任何更高低点出现，在下降通道下沿试多是接刀，不是低风险配置。空仓者不建立新仓，已持仓者只减不加。</p>
+<p>中立派还没发言，但他们最可能依赖的三条我也先摆上台面：MACD 柱体 11-05 由 -0.0217 转正到 +0.0114、RSI 55.60 尚未超买、价格站上 10EMA 4.5554 和 50SMA 4.5952。问题在于，MACD 线仍是 -0.0252，柱体只有 ATR 的约 2.7%，一天就能翻负；9 月以来同类零轴下方金叉两次都没突破前高。价格四天涨 22%，RSI 才回到 55.6，这说明是极弱修复到中性，不是强趋势启动。价格站在短期均线上方 7.3%，却仍在 200SMA 下方 6.1%，这不叫多头排列，这叫空头结构里的反抽。中立派如果主张 HOLD，本质是用全仓位被动承受下行和跳空风险，换取“不做决定”的舒适，这在风险调整后并不划算。VWMA 4.5164 虽然被价格高出 8.3%，但 VWMA 自身仍在下行，反弹量能 123.0M–152.5M 明显低于下跌段 210M–269M，“下跌有量、上涨缩量”没有增量资金背书，持有等确认的学费可能很高。</p>
+<p>所以我对交易员 SELL 方案的保守化调整是：在 4.89–5.00 用限价分批卖出，若已持有 000892.SZ 标准仓位，至少减半；若持仓集中度高或无法承受隔夜跳空，减到三分之二。剩余仓位按“跳空至 3.80 的损失不超过净值 1%–1.5%”倒算，按 4.89 到 3.80 约 22.3% 的跌幅，剩余敞口大约控制在净值 5%–7%，最多不超过 10%，不要为了保留突破期权而保留过重底仓。剩余仓位的纪律也要提前：收盘跌破 4.69 先减半，收盘跌破 4.55 清掉；若开盘跳空跌破 4.55 且流动性允许，直接退出，不等收盘。不做裸空，不新增多头，删除 4.55–4.60 试多条款；重新评估至少要等 5.13 和 5.2081 的确认，而不是 5.00。000892.SZ 最安全的路径是现在降低敞口、压缩剩余仓位、提高再入条件。HOLD 过于被动，激进派的“进攻性卖出加保留试多”又把风控做成了交易博弈；我们卖出是为了让组合在下跌通道和跳空风险中保持可持续，而不是为了证明谁更锋利。</p>
+<p><strong>Rating</strong>: SELL
+FINAL TRANSACTION PROPOSAL: <strong>SELL</strong></p>
+<h3 id="s4-3">Neutral Analyst</h3>
+<p>Neutral Analyst: 我认同对 000892.SZ 做减配，但不认同激进派把它说成必须“做满二分之一甚至以上”的进攻性下注。卖出在 4.89–5.00 这个还有买盘接货的窗口里执行，方向是对的，因为 000892.SZ 收盘仍低于 200SMA 5.2081 约 6.1%，200SMA 继续下行，高点序列 6.88→6.73→5.64→5.49→5.13→4.92 和低点序列 4.26→3.99→3.80 都没有修复，反弹量能 123.0M–152.5M 也明显弱于 10-12 至 10-16 下跌段的 210M–269M，“下跌有量、上涨缩量”这个缺陷是真实的。但激进派把上行空间压缩成 4.92–5.00 的 0.6%–2.2%，再用 4.55 的 -7% 来证明这是一笔负期望交易，这里有点过度简化。000892.SZ 如果真的出现收盘站上 5.00 且量能放大，后面仍有 5.13、5.2081 甚至 5.47–5.64 的目标区，赔率不是只有第一道阻力；问题在于概率和确认条件，而不是上行空间完全不存在。所以减仓应该做，但不能因为“凸性定价”这种叙事就把减仓比例默认拉满，尤其我们不知道调用者当前持仓集中度和现金水平，不能假设所有人都该做到二分之一以上。激进派提出的收盘 &gt;5.00 且量能 &gt;200M 就加回中性，也要降级为“重新评估”而不是直接按常规仓位 60% 追入，因为 200M 仍低于下跌段 210M–269M，单日脉冲完全可能是假突破。</p>
+<p>保守派的风控框架我认可一半：4.89 到 4.55 只有约 0.82 个 ATR，ATR 0.4155 占价 8.5%，000892.SZ 又有一字板历史，隔夜跳空风险不能只用日内止损衡量，用“跳空至 3.80 的损失不超过净值 1%–1.5%”倒算剩余敞口是专业做法。但保守派把结论直接推到“至少减半、集中度高就减三分之二、剩余敞口只留 5%–7%”，对未知持仓的调用者来说过于一刀切。若原仓位本来就不大，或者账户能承受 2% 左右的尾部损失，剩余 9%–10% 净值并非不可接受；真正要守的是风险预算，而不是一个固定百分比。保守派要求重新评估必须等连续两日收盘站上 5.13、量能超过 210M，最好再站上 5.2081 并回踩不破，也太迟了，等这些都确认，价格可能已经离支撑很远，再入场的止损空间反而更差。至于把 4.55–4.60 的试多条款直接删除，我认为太绝对；如果 000892.SZ 回踩 4.55–4.60 不破并出现明确反包和放量，用账户风险 1%、止损 4.40、单笔不超过净值 5%–10% 的小仓位试错，是可以保留的，但前提是出现更高低点或确认性 K 线，不能只因为价格碰到支撑就接刀。</p>
+<p>所以我的中立调整是：对 000892.SZ 执行分批减配，而不是清仓或裸空。标准仓位可在 4.89–5.00 先减三分之一到二分之一；如果持仓集中度高、无法承受隔夜跳空，再向三分之二靠拢；如果本来已低配，减三分之一即可，不必机械照搬保守派的上限。剩余仓位先看 4.69 布林中轨作为预警，收盘跌破 4.55 作为短线逻辑失效的离场线，跌破 4.41 则确认 11-02 反转日多头被套，进一步看 4.01、3.92、3.80。剩余敞口要按自身风险预算倒算：若能承受跳空至 3.80 的 1%–1.5% 净值损失，剩余约 5%–7% 净值；若能承受 2%，可放到 9%–10%，但不宜超过 10%。再入条件采取阶梯式：收盘 &gt;5.00 且量能 &gt;200M 只做重新评估；收盘 &gt;5.13 且量能 &gt;210M 可小仓加回；站上 5.2081 并回踩不破再恢复中性。这样既承认 000892.SZ 当前仍是下降通道反抽，也保留突破时的参与权，不把风控做成清仓式偷懒，也不把减仓包装成过度自信的进攻。</p>
+<p><strong>Rating</strong>: SELL
+FINAL TRANSACTION PROPOSAL: <strong>SELL</strong></p>
+</section><section id="s5"><h2>V. Portfolio Manager Decision</h2><h3 id="s5-1">Portfolio Manager</h3>
+<p><strong>Rating</strong>: Underweight</p>
+<p><strong>Executive Summary</strong>: 对 000892.SZ 执行减配而非清仓：已持有标准仓位者在 4.89–5.00 阻力区逢高减掉三分之一至二分之一，集中度高或无法承受隔夜跳空者最多减至三分之二；剩余仓位以收盘跌破 4.55 为短线离场线、跌破 4.41 清空。不新增多头、不做裸空，空仓者不进场；收盘站上 5.00 且成交量 &gt;200M 仅触发重新评估，不机械加回。建议时间窗口 2–4 周。</p>
+<p><strong>Investment Thesis</strong>: 三位风险分析师对 000892.SZ 的方向判断一致，分歧仅在减仓力度，最终按证据强度定为 Underweight 而非全额 Sell。空头结构性证据占优：收盘 4.89 仍在 200SMA 5.2081 下方约 6.1%，200SMA 自 7-08 的 6.2420 持续下行；高点序列 6.88→6.73→5.64→5.49→5.13→4.92、低点序列 4.26→3.99→3.80 均未修复，9 月以来下降通道未破。量能质量也偏空：本轮反弹量能 123.0–152.5M，明显低于 10-12 至 10-16 下跌段的 210M–269M，呈“下跌有量、反弹缩量”，缺乏增量资金背书。风险回报对现价多头明显不对称：自 4.89 向上至 4.92–5.00 第一阻力带仅 +0.6%–+2.2%，至 5.13 约 +4.9%；向下至 4.55 纪律线约 -7%，而 ATR 0.4155 占价 8.5%，日内噪音即可吞噬止损空间。激进派与保守派都正确指出，应在 4.89–5.00 仍有追高买盘提供流动性的窗口内完成减仓，而非等破位后排队割肉；该标的有 09-01、09-02、04-23、07-15 等一字板记录，隔夜跳空风险无法用日内 ATR 度量，也不支持裸空。不降为 Sell/全额清仓的依据同样具体：11-05 MACD 柱体由 -0.0217 转正至 +0.0114，为 10-19 后首次翻红；RSI 回升至 55.60、价格站上 10EMA 4.5554 与 50SMA 4.5952，并收在 10-16 以来最高收盘，短线下跌动能只是衰减、尚未衰竭。执行上采用中立派的阶梯式框架：标准仓位在 4.89–5.00 减三分之一至二分之一，集中度高者向三分之二靠拢；剩余敞口按“跳空至 3.80 的损失不超净值 1%–1.5%”倒算（约 5%–7% 净值），风险预算允许 2% 损失者可放宽至约 9%–10% 但不超 10%。4.69 作预警，收盘跌破 4.55 离场，跌破 4.41 清空剩余。再入采用阶梯触发：收盘 &gt;5.00 且量能 &gt;200M 仅重新评估；收盘 &gt;5.13 且量能 &gt;210M 可小仓加回；站上 5.2081 并回踩不破再恢复中性。4.55–4.60 试多仅在出现更高低点或确认性反包且重新放量时，以账户风险 1%、止损 4.40、单笔不超净值 5%–10% 小仓执行。本次材料缺少 000892.SZ 的基本面、新闻与情绪报告，无法验证估值重估逻辑；上述判断仅按技术面短线/中线纪律执行，不得以“价值修复”为由加大敞口。</p>
+<p><strong>Price Target</strong>: 4.55</p>
+<p><strong>Time Horizon</strong>: 2-4周</p>
+</section>
+</main>
+<footer class="credit"><a href="https://github.com/TauricResearch/TradingAgents" rel="noopener">TradingAgents</a> powered by <a class="brand" href="https://github.com/TauricResearch" rel="noopener">Tauric Research</a></footer>
+</div>
+<a class="to-top" href="#top">Top</a>
+</body>
+</html>

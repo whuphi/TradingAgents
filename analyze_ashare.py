@@ -19,7 +19,16 @@ from tradingagents.dataflows.symbols import normalize_symbol, safe_ticker_compon
 from tradingagents.default_config import DEFAULT_CONFIG
 from tradingagents.graph.trading_graph import TradingAgentsGraph
 
-load_dotenv("/workspace/.env")
+# Keys come from the process environment (Trae-injected). A local .env is only a
+# fallback for interactive use — the sandbox wipes it between runs.
+if os.path.exists("/workspace/.env"):
+    load_dotenv("/workspace/.env")
+
+if not os.getenv("DEEPSEEK_API_KEY"):
+    sys.exit(
+        "Missing DEEPSEEK_API_KEY. Set it in Trae's environment variables "
+        "(settings → environment), or create /workspace/.env for a one-off run."
+    )
 
 symbol = sys.argv[1]
 trade_date = sys.argv[2]
