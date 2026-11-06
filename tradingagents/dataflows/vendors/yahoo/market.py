@@ -27,11 +27,26 @@ def get_YFin_data_online(
     # Resolve broker/forex symbols to Yahoo's convention (XAUUSD+ -> GC=F).
     canonical = normalize_symbol(symbol)
 
-    # yfinance treats ``end`` as EXCLUSIVE, so it would drop the requested
-    # end_date row (and the current day when end_date is today). Request one day
-    # past end_date so the requested range is actually inclusive (#986/#987).
-    end_inclusive = (end_dt + relativedelta(days=1)).strftime("%Y-%m-%d")
-    data = yf_retry(lambda: yf.Ticker(canonical).history(start=start_date, end=end_inclusive))
+    # Serve from the pre-warmed OHLCV cache when available. Yahoo's network is
+    # blocked from CI/sandbox egress, so A-share runs seed the cache from another
+    # vendor (akshare/Sina) and this path must read it instead of hammering Yahoo.
+    cached = None
+    try:
+        cached = load_ohlcv(canonical, end_date)
+    except Exception as e:
+        logger.warning("Cached OHLCV unavailable for %s: %s", canonical, e)
+
+    if cached is not None and not cached.empty:
+        data = cached.set_index("Date")
+        data = data[(data.index >= pd.Timestamp(start_date)) & (data.index <= end_dt)]
+        if data.empty:
+            raise_for_empty(symbol, canonical, f"rows between {start_date} and {end_date}")
+    else:
+        # yfinance treats ``end`` as EXCLUSIVE, so it would drop the requested
+        # end_date row (and the current day when end_date is today). Request one
+        # day past end_date so the requested range is actually inclusive (#986/#987).
+        end_inclusive = (end_dt + relativedelta(days=1)).strftime("%Y-%m-%d")
+        data = yf_retry(lambda: yf.Ticker(canonical).history(start=start_date, end=end_inclusive))
 
     # Empty result means the symbol is unknown/delisted. Raise a typed error
     # instead of returning prose: the routing layer turns it into a single
